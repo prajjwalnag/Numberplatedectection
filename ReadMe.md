@@ -17,4 +17,4 @@ Parking Enforcement: Illegal parking can be curbed, freeing up space and maintai
 
 These daily encounters with the chaos and dangers of Indian traffic have motivated me to work on a project focused on efficient number plate detection. I am determined to contribute to a safer and more orderly traffic system, hoping to make a real difference in the lives of fellow commuters and ensure that the roads we travel are secure and well-regulated.
 
-![Indian Biker Navigating Chaotic Streets](images\A_cartoonish_scene_depicting_an_Indian_biker_navig.jpg)
+![Indian Biker Navigating Chaotic Streets](images/A_cartoonish_scene_depicting_an_Indian_biker_navig.jpg)
