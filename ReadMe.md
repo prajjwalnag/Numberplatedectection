@@ -18,3 +18,14 @@ Parking Enforcement: Illegal parking can be curbed, freeing up space and maintai
 
 These daily encounters with the chaos and dangers of Indian traffic have motivated me to work on a project focused on efficient number plate detection. I am determined to contribute to a safer and more orderly traffic system, hoping to make a real difference in the lives of fellow commuters and ensure that the roads we travel are secure and well-regulated.
 
+## System Design 
+![Indian Biker Navigating Chaotic Streets](images/flowchart.png)
+
+### Image Collection 
+We collected all images from google images , we only wanted images of cars in Indian roads. To scrap the data we used 
+simple image downloaded which is python package to download images, using google images search.
+
+### Preprocessing
+All the downloaded images wont be upto the mark for the task we are doing and hence need to be manually inspected once before labelling task.
+### Labeling images 
+to label the images we use labelImg ands the label is  "Numberplate"
