@@ -19,13 +19,18 @@ Parking Enforcement: Illegal parking can be curbed, freeing up space and maintai
 These daily encounters with the chaos and dangers of Indian traffic have motivated me to work on a project focused on efficient number plate detection. I am determined to contribute to a safer and more orderly traffic system, hoping to make a real difference in the lives of fellow commuters and ensure that the roads we travel are secure and well-regulated.
 
 ## System Design 
-![Indian Biker Navigating Chaotic Streets](images/flowchart.png)
+![Indian Biker Navigating Chaotic Streets](images/Flowchart.png)
 
 ### Image Collection 
 We collected all images from google images , we only wanted images of cars in Indian roads. To scrap the data we used 
-simple image downloaded which is python package to download images, using google images search.
+simple image downloaded which is python package to download images, using google images search. We tested with alot of different keywords to find the extact type of images that we wanted for the project. Once we have the list of the keyword that suits our need we us the "downloadimages.py" script to download all the images. 
 
 ### Preprocessing
-All the downloaded images wont be upto the mark for the task we are doing and hence need to be manually inspected once before labelling task.
+ Not all the images will be good for train and fight have duplicated data along the way, whcih needs to be removed before traing the data. 
+
 ### Labeling images 
-to label the images we use labelImg ands the label is  "Numberplate"
+ The important step in objec t recognition is to label the Area of Interesting using a Labeling tool. When we started the project we used Labelstudio for labeling the images , so that we can train the Yolo V7 model on the labeled images. 
+
+ The idea was later discarded and roboflow platform was used as its API allow direct intregration in Jupyter Notebook to train YOLO V8 model. 
+
+ ![Roboflow Dataset](images/Dataset.pnmg.PNG)
