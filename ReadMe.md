@@ -34,3 +34,29 @@ simple image downloaded which is python package to download images, using google
  The idea was later discarded and roboflow platform was used as its API allow direct intregration in Jupyter Notebook to train YOLO V8 model. 
 
  ![Roboflow Dataset](images/Dataset.pnmg.PNG)
+  The Dataset was created with 86 Images which was 
+ ![Roboflow Dataset](images/testtrain.PNG)
+
+ ### Training the model 
+ The dataset was imported in a google collab and trained in Yolo V8 model using a GPU.
+ *Tip* Free GPU can get exhuasted so train and save the model and then use CPU to do the infernces locally.
+
+ ### Running the model locally 
+ Once the model is trained and working, the model is saved and used locally to compute the inferences. The model could easily detect the number plate with an accuracy of 98.8% . 
+ ![NumberPlate](images/8.JPG)
+  
+### Croping the Area of Interest 
+Once the number plate is detected, the numberplate is then croped and saved in cropped image directory.
+
+![CroppedImage](images/numberplate.png)
+ 
+### Preprocessing for OCR 
+We will be using the open source tool tesseract, to extract charecters from the number plate. Teseract works like a chartm with some preprcrocessing so we will incoprate a small preprocessing pipeline. 
+
+![Processed Image](images/processed.PNG)
+
+### Extract information using Tesseract 
+Once the images are processed we can use it with tesseract to display the number plate information.
+
+![OCR Results](images/OCR%20result.PNG)
+
