@@ -91,7 +91,7 @@ contours, _ = cv2.findContours(white_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_S
 x, y, w, h = cv2.boundingRect(contours[0])
 
 # Crop the image using the bounding box with an additional margin
-margin = -2  # Adjust the margin as needed
+margin = -5  # Adjust the margin as needed
 cropped_image = crop_with_margin(scaled_image, x, y, w, h, margin)
 
 # Increase contrast and brightness
@@ -103,7 +103,7 @@ adjusted_image = adjust_contrast_brightness(cropped_image, contrast=contrast, br
 adjusted_pil_image = Image.fromarray(cv2.cvtColor(adjusted_image, cv2.COLOR_BGR2RGB))
 
 # Use Tesseract OCR to recognize characters in the adjusted image
-ocr_result = pytesseract.image_to_string(adjusted_pil_image, lang='traindata_all')
+ocr_result = pytesseract.image_to_string(adjusted_image, lang='eng')
 
 # Display the original, mask, cropped, and adjusted images
 cv2.imshow('Original Image', image)
