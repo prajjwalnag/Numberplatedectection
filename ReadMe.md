@@ -21,6 +21,7 @@ Parking Enforcement: Illegal parking can be curbed, freeing up space and maintai
 These daily encounters with the chaos and dangers of Indian traffic have motivated me to work on a project focused on efficient number plate detection. I am determined to contribute to a safer and more orderly traffic system, hoping to make a real difference in the lives of fellow commuters and ensure that the roads we travel are secure and well-regulated.
 
 ## System Design 
+
 ![Indian Biker Navigating Chaotic Streets](images/Flowchart.png)
 
 ### Image Collection 
@@ -33,7 +34,9 @@ Not all images are suitable for training, and duplicate data needs to be removed
 A crucial step in object recognition is labeling the area of interest using a labeling tool. Initially, we used LabelStudio for labeling the images to train the YOLO V7 model. Later, we switched to the Roboflow platform due to its API integration with Jupyter Notebook for training the YOLO V8 model.
 
 ![Roboflow Dataset](images/Dataset.pnmg.PNG)
+
 The dataset was created with 86 images.
+
 ![Roboflow Dataset](images/testtrain.PNG)
 
 ### Training the Model 
@@ -42,14 +45,17 @@ The dataset was imported into Google Colab and trained using the YOLO V8 model o
 
 ### Running the Model Locally 
 Once the model is trained, it can be used locally to compute inferences. The model can detect number plates with an accuracy of 98.8%.
+
 ![NumberPlate](images/8.JPG)
 
 ### Cropping the Area of Interest 
 Once the number plate is detected, it is cropped and saved in the cropped image directory.
+
 ![CroppedImage](images/numberplate.png)
 
 ### Preprocessing for OCR 
 We use the open-source tool Tesseract to extract characters from the number plate. Tesseract works efficiently with some preprocessing, so we incorporated a small preprocessing pipeline.
+
 ![Processed Image](images/processed.PNG)
 
 ### Extract Information Using Tesseract 
