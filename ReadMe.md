@@ -1,5 +1,7 @@
 # Number Plate Detection 
+
 ## Background
+
 As a biker navigating the chaotic streets of India, I’ve faced countless challenges that often left me feeling frustrated and vulnerable. There were days when reckless drivers would zoom past me, ignoring traffic signals and putting everyone at risk. I remember a particularly harrowing incident where a car ran a red light, barely missing me by inches. The fear and helplessness I felt in that moment made me acutely aware of the dire need for better traffic management and safety measures in our country.
 ![Indian Biker Navigating Chaotic Streets](images/A_cartoonish_scene_depicting_an_Indian_biker_navig.jpg)
 
@@ -22,41 +24,34 @@ These daily encounters with the chaos and dangers of Indian traffic have motivat
 ![Indian Biker Navigating Chaotic Streets](images/Flowchart.png)
 
 ### Image Collection 
-We collected all images from google images , we only wanted images of cars in Indian roads. To scrap the data we used 
-simple image downloaded which is python package to download images, using google images search. We tested with alot of different keywords to find the extact type of images that we wanted for the project. Once we have the list of the keyword that suits our need we us the "downloadimages.py" script to download all the images. 
+We collected all images from Google Images, specifically focusing on cars on Indian roads. To scrape the data, we used the Simple Image Download, a Python package for downloading images via Google Image search. We tested various keywords to find the exact type of images needed for the project. Once we had the list of suitable keywords, we used the "downloadimages.py" script to download all the images.
 
 ### Preprocessing
- Not all the images will be good for train and fight have duplicated data along the way, whcih needs to be removed before traing the data. 
+Not all images are suitable for training, and duplicate data needs to be removed before training.
 
-### Labeling images 
- The important step in objec t recognition is to label the Area of Interesting using a Labeling tool. When we started the project we used Labelstudio for labeling the images , so that we can train the Yolo V7 model on the labeled images. 
+### Labeling Images 
+A crucial step in object recognition is labeling the area of interest using a labeling tool. Initially, we used LabelStudio for labeling the images to train the YOLO V7 model. Later, we switched to the Roboflow platform due to its API integration with Jupyter Notebook for training the YOLO V8 model.
 
- The idea was later discarded and roboflow platform was used as its API allow direct intregration in Jupyter Notebook to train YOLO V8 model. 
+![Roboflow Dataset](images/Dataset.pnmg.PNG)
+The dataset was created with 86 images.
+![Roboflow Dataset](images/testtrain.PNG)
 
- ![Roboflow Dataset](images/Dataset.pnmg.PNG)
-  The Dataset was created with 86 Images which was 
- ![Roboflow Dataset](images/testtrain.PNG)
+### Training the Model 
+The dataset was imported into Google Colab and trained using the YOLO V8 model on a GPU.
+*Tip:* Free GPU resources can get exhausted, so train and save the model, then use a CPU for local inferences.
 
- ### Training the model 
- The dataset was imported in a google collab and trained in Yolo V8 model using a GPU.
- *Tip* Free GPU can get exhuasted so train and save the model and then use CPU to do the infernces locally.
+### Running the Model Locally 
+Once the model is trained, it can be used locally to compute inferences. The model can detect number plates with an accuracy of 98.8%.
+![NumberPlate](images/8.JPG)
 
- ### Running the model locally 
- Once the model is trained and working, the model is saved and used locally to compute the inferences. The model could easily detect the number plate with an accuracy of 98.8% . 
- ![NumberPlate](images/8.JPG)
-  
-### Croping the Area of Interest 
-Once the number plate is detected, the numberplate is then croped and saved in cropped image directory.
-
+### Cropping the Area of Interest 
+Once the number plate is detected, it is cropped and saved in the cropped image directory.
 ![CroppedImage](images/numberplate.png)
- 
-### Preprocessing for OCR 
-We will be using the open source tool tesseract, to extract charecters from the number plate. Teseract works like a chartm with some preprcrocessing so we will incoprate a small preprocessing pipeline. 
 
+### Preprocessing for OCR 
+We use the open-source tool Tesseract to extract characters from the number plate. Tesseract works efficiently with some preprocessing, so we incorporated a small preprocessing pipeline.
 ![Processed Image](images/processed.PNG)
 
-### Extract information using Tesseract 
-Once the images are processed we can use it with tesseract to display the number plate information.
-
+### Extract Information Using Tesseract 
+After processing, the images can be used with Tesseract to display the number plate information.
 ![OCR Results](images/OCR%20result.PNG)
-
