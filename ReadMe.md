@@ -54,4 +54,5 @@ We use the open-source tool Tesseract to extract characters from the number plat
 
 ### Extract Information Using Tesseract 
 After processing, the images can be used with Tesseract to display the number plate information.
+
 ![OCR Results](images/OCR%20result.PNG)
